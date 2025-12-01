@@ -12,9 +12,7 @@ async function getInput(year: number, day: number) {
 
 async function getOrWriteInput(day: number) {
   const input = await getInput(2025, day);
-  if (!input) {
-    throw new Error("Error. Check AOC_SESSION_ID");
-  }
+
   fs.mkdirSync(`${day}`, { recursive: true });
   fs.writeFileSync(`${day}/input.txt`, input.trim());
   fs.writeFileSync(`${day}/${day}.ts`, "");

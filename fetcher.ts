@@ -15,7 +15,11 @@ async function getOrWriteInput(day: number) {
 
   fs.mkdirSync(`${day}`, { recursive: true });
   fs.writeFileSync(`${day}/input.txt`, input.trim());
-  fs.writeFileSync(`${day}/${day}.ts`, "");
+  const tsFilePath = `${day}/${day}.ts`;
+
+  if (!fs.existsSync(tsFilePath)) {
+    fs.writeFileSync(tsFilePath, "");
+  }
 }
 
 function getDay() {

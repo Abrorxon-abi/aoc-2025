@@ -26,7 +26,7 @@ async function main() {
   const now = new Date();
   const day = getDay();
   const targetHour = 10;
-  const targetMinute = 1;
+  const targetMinute = 0;
 
   if (
     now.getHours() < targetHour ||
